@@ -9,76 +9,20 @@
 </p>
 
   
-## 使用说明
-### 基本使用
-所有的配置项都在 `Config.php` 文件里，根据需要自行更改：
+# 介绍
+* 这个是一个使用python构建的获取某网站视频资源的简易爬虫
 
-* 91的主站地址：  
+# 基本要求
+* 需要能访问得到某不存在的网站(某些校园网因为IPV6或教育网的原因可能可以直接访问)
+* 若使用源码运行，需要预先安装python3及第三方包bs4及requests
 
-``` php
-static $url = '91porn.com';
-// static $url = '627.workarea7.live';  //免翻墙地址
-// static $url = 'e528.mbaudet.cl';
-```
+# 使用方法
+* 1.python download-HD.py
 
-* 视频存放路径，默认放在项目的`videos`文件夹下
-``` php
-static $path = __DIR__.'/videos';
-// static $path = '/Users/ooxx/Downloads/videos';
-```
-
-* 代理（**推荐**），可支持`http`代理或`socks5`代理
-``` php
-// static $proxy = 'http://127.0.0.1:1087';
-// static $proxy = 'socks5://127.0.0.1:1086';
-```
-
-* 运行91all.php需要下载的列表地址以及页码数(只需要提取 "?" 以后的内容)
-``` php
-static $all_lists = [
-  'category=top&viewtype=basic' => [1, 10],     //本月最热
-  'category=mf&viewtype=basic' => [1, 5],       //收藏最多
-  'category=md&viewtype=basic' => 4,            //收藏最多
-];
-```
-
-* 内存限制，越大越好
-``` php
-static $memory_limit = '512M';
-```
-
-### 批量下载视频
-首页：
-````
-php 91porn.php
-````
-列表页：
-````
-php 91all.php
-````
-
-### 下载单个视频文件
-运行`detailPage.php`文件，将视频网页的地址传入
-````
-php detailPage.php http://91porn.com/view_video.php?viewkey=042a30e56c9cd20b075f
-````
-
-## 环境要求
-* windows, linux, macos
-* nodejs
-* php >= 5.6
-
-### Node.js 安装方法：
-#### Windows
-https://nodejs.org/en/download/
-#### MacOS
-`brew install node --with-npm`
-#### 群晖
-套件中心
-#### CentOS
-`yum install nodejs`
-#### Ubuntu
-`apt-get install nodejs`
+# 改进
+* 改进下载部分代码，实现重连以及多点下载
+* 伪造cookie模拟登录，解除一个IP一天只能下10个视频的限制
+* 完成友好的GUI界面
 
 ## 联系方式
 https://t.me/scrapy91
