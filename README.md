@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://github.com/91po/91porn"><img src="blob:https://github.com/24ec2ab7-a3cf-48a0-a173-4e3f5a5d865f"></a>
+    <a href="https://github.com/91po/91porn"><img src="https://github.com/91po/91porn/blob/main/logo.jpg"></a>
 </p>
 
   
@@ -18,7 +18,7 @@
 * 伪造cookie模拟登录，解除一个IP一天只能下10个视频的限制
 * 完成友好的GUI界面
 
-今日口令（每日21:00更新 ）**OYs3C**,时效:1天,总次数:1000
+今日口令（每日21:00更新 ）**9jrtH**,时效:1天,总次数:1000
 
 API: https://91api.org
 
