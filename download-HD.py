@@ -3,15 +3,11 @@ import requests
 import os
 import re
 import time
-import random
 import threading
 import sys
-import base64
 from bs4 import BeautifulSoup
-import js2py
 import signal
 from tqdm import tqdm
-from urllib.parse import urlparse
 from threading import Thread
 
 headers = {
@@ -164,6 +160,12 @@ def getVideoUrl(base_req):
 
         # a = re.compile('source src="(.*)" type=').findall(str(video))
 
+        if url == "需要授权":
+            print("请修改token")
+            return 0
+        elif url == "解密失败":
+            print("解密失败")
+            return 0
         return url
     except Exception as e:
         print(e)
