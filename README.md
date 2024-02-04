@@ -18,7 +18,7 @@
 * 伪造cookie模拟登录，解除一个IP一天只能下10个视频的限制
 * 完成友好的GUI界面
 
-今日口令（每日21:00更新 ）**cF8tW**,时效:1天,总次数:1000
+今日口令（每日21:00更新 ）**cF8tW**, 时效:1天, 总次数:1000
 
 # API版接口 
 
@@ -57,7 +57,7 @@ list object结构,如下：
 | title      | 视频标题    | 是   | String |
 | pic        | 封面图片URL | 是   | String |
 | duration   | 视频时长    | 是   | String |
-| loadtime   | 上传日期    | 否   | String |
+| loadtime   | 上传日期    | 否   | Int |
 | authorName | 作者名字    | 是   | String |
 
 ### 请求示例
@@ -78,15 +78,15 @@ https://91api.org/api/list?category=&page=1
 			"viewkey": "c8cf551c39e0421239a2",
 			"title": "标题示例1",
 			"pic": "http://img.t6k.co/thumb/1_357370.jpg",
-			"duration": "21:52",
-			"loadtime": "9小时前",
+			"duration": "00:03:55",
+			"loadtime": 1706785428,
 			"authorName": "作者名字1"
 		}, {
 			"viewkey": "406e4a6c648a881a81d0",
 			"title": "标题示例2",
 			"pic": "http://img.t6k.co/thumb/1_357369.jpg",
-			"duration": "11:23",
-			"loadtime": "11小时前",
+			"duration": "00:03:55",
+			"loadtime": 1706785428,
 			"authorName": "作者名字2"
 		}],
 		"totalPage": "146",
