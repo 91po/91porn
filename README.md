@@ -60,6 +60,11 @@ data object结构,如下：
 | duration   | 视频时长    | 是   | String |
 | loadtime   | 上传日期    | 否   | Int |
 | authorName | 作者名字    | 是   | String |
+| pop        | 热度       | 是   | Int |
+| fav        | 收藏        | 是   | Int |
+| comments   | 留言        | 是   | Int |
+| like       | 点赞       | 是   | Int |
+| dislike    | 不喜欢     | 是   | Int |
 
 ### 请求示例
 
