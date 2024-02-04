@@ -92,6 +92,43 @@ https://91api.org/api/list?category=rf&page=1
 ```
 
 
+## 接口：解密列表
+| 描述     | 内容                |
+| -------- | ------------------ |
+| 接口功能 | 解密91porn加密链接    |
+| 请求协议 | HTTPS               |
+| 请求方法 | POST                |
+| 请求url  | decode1 decode2     |
+| 响应格式 | string                 |
+
+### 请求参数
+
+| 参数     | 描述                                             | 必填 | 类型   |
+| -------- | ------------------------------------------------ | ---- | ------ |
+| token    | 授权码                                            | 是   | String |
+| str      | 加密链接                                           | 是   | String |
+
+### 响应参数
+
+| 参数        | 描述                     | 必有 | 类型            |
+| ----------- | ------------------------ | ---- | ------------- |
+| str        | 解密链接                   | 是   | String         |
+
+
+### 请求示例
+
+```
+wget https://www.91api.org/api/decode2 --post-data "token=口令&str=加密字符串"
+```
+
+### 响应示例
+
+
+```
+https://xxxxx.mp4?secure=NriB2E5ciJs0kKG1d3q7cmI/o
+```
+
+
 ## 联系方式
 
 https://t.me/crawler91
