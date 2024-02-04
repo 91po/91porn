@@ -44,12 +44,9 @@
 
 | 参数        | 描述                     | 必有 | 类型          |
 | ----------- | ------------------------ | ---- | ------------- |
-| totalPage   | 总页数                   | 是   | String        |
-| currentPage | 当前页                   | 是   | String        |
-| category    | 回显列表种类字段         | 是   | String        |
-| list        | 视频列表，object格式见下 | 是   | Array[Object] |
+| data        | 视频列表，object格式见下 | 是   | Array[Object] |
 
-list object结构,如下：
+data object结构,如下：
 
 | 参数       | 描述        | 必有 | 类型   |
 | ---------- | ----------- | ---- | ------ |
@@ -63,7 +60,7 @@ list object结构,如下：
 ### 请求示例
 
 ```
-https://91api.org/api/list?category=&page=1
+https://91api.org/api/list?category=rf&page=1
 ```
 
 ### 响应示例
@@ -71,28 +68,25 @@ https://91api.org/api/list?category=&page=1
 
 ```
 {
-	"success": 1,
-	"data": {
-		"key": "1rf",
-		"list": [{
-			"viewkey": "c8cf551c39e0421239a2",
-			"title": "标题示例1",
-			"pic": "http://img.t6k.co/thumb/1_357370.jpg",
-			"duration": "00:03:55",
-			"loadtime": 1706785428,
-			"authorName": "作者名字1"
-		}, {
-			"viewkey": "406e4a6c648a881a81d0",
-			"title": "标题示例2",
-			"pic": "http://img.t6k.co/thumb/1_357369.jpg",
-			"duration": "00:03:55",
-			"loadtime": 1706785428,
-			"authorName": "作者名字2"
-		}],
-		"totalPage": "146",
-		"currentPage": "1",
-		"category": "rf"
-	}
+    "data": [
+        {
+            "AUTHORNAME": "匿名",
+            "DURATION": "00:39:36",
+            "LOADTIME": 1706909369,
+            "PIC": "https://172913mb/931273.jpg",
+            "TITLE": "看视频水印",
+            "VIEWKEY": "ce7cdddefa4799fd0451"
+        },
+        {
+            "AUTHORNAME": "匿名",
+            "DURATION": "00:59:18",
+            "LOADTIME": 1706909654,
+            "PIC": "https://17291rg/thumb/931270.jpg",
+            "TITLE": "刚开完家长会",
+            "VIEWKEY": "9f64fec40d63d153faaf"
+        },
+    ],
+    "success": 1
 }
 ```
 
