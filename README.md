@@ -1,4 +1,4 @@
-![image](https://github.com/91po/91porn/assets/156626743/016e444a-40ed-4eab-ba38-4c7fe37c4c95)<p align="center">
+<p align="center">
     <a href="https://github.com/91po/91porn"><img src="https://github.com/91po/91porn/blob/main/logo.jpg"></a>
 </p>
 
