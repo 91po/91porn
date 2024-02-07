@@ -65,6 +65,7 @@ data object结构,如下：
 | comments   | 留言        | 是   | Int |
 | like       | 点赞       | 是   | Int |
 | dislike    | 不喜欢     | 是   | Int |
+| thumb      | 缩略视频URL | 是   | String |
 
 ### 请求示例
 
