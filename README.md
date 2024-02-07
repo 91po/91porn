@@ -47,7 +47,7 @@
 | ----------- | ------------------------ | ---- | ------------- |
 | success     | 是否成功 0:失败 1: 成功    | 是   |       int     |
 | data        | 视频列表，object格式见下   | 否   | Array[Object] |
-| total       | 总页数                   | 否   | String        |
+| total       | 总页数                   | 否   | int           |
 | msg         | 提示消息                 | 否   | String        |
 
 data object结构,如下：
