@@ -45,7 +45,10 @@
 
 | 参数        | 描述                     | 必有 | 类型          |
 | ----------- | ------------------------ | ---- | ------------- |
-| data        | 视频列表，object格式见下 | 是   | Array[Object] |
+| success     | 是否成功 0:失败 1: 成功    | 是   |       int     |
+| data        | 视频列表，object格式见下   | 否   | Array[Object] |
+| total       | 总页数                   | 否   | int           |
+| msg         | 提示消息                 | 否   | String        |
 
 data object结构,如下：
 
@@ -55,8 +58,14 @@ data object结构,如下：
 | title      | 视频标题    | 是   | String |
 | pic        | 封面图片URL | 是   | String |
 | duration   | 视频时长    | 是   | String |
-| loadtime   | 上传日期    | 否   | Int |
+| loadtime   | 上传日期    | 是   | Int |
 | authorName | 作者名字    | 是   | String |
+| pop        | 热度       | 是   | Int |
+| fav        | 收藏        | 是   | Int |
+| comments   | 留言        | 是   | Int |
+| like       | 点赞       | 是   | Int |
+| dislike    | 不喜欢     | 是   | Int |
+| thumb      | 缩略视频URL | 是   | String |
 
 ### 请求示例
 
@@ -71,20 +80,20 @@ https://91api.org/api/list?category=rf&page=1
 {
     "data": [
         {
-            "AUTHORNAME": "匿名",
-            "DURATION": "00:39:36",
-            "LOADTIME": 1706909369,
-            "PIC": "https://172913mb/931273.jpg",
-            "TITLE": "看视频水印",
-            "VIEWKEY": "ce7cdddefa4799fd0451"
+            "authorName": "匿名",
+            "duration": "00:39:36",
+            "loadtime": 1706909369,
+            "pic": "https://172913mb/931273.jpg",
+            "title": "看视频水印",
+            "viewkey": "ce7cdddefa4799fd0451"
         },
         {
-            "AUTHORNAME": "匿名",
-            "DURATION": "00:59:18",
-            "LOADTIME": 1706909654,
-            "PIC": "https://17291rg/thumb/931270.jpg",
-            "TITLE": "刚开完家长会",
-            "VIEWKEY": "9f64fec40d63d153faaf"
+            "authorName": "匿名",
+            "duration": "00:59:18",
+            "loadtime": 1706909654,
+            "pic": "https://17291rg/thumb/931270.jpg",
+            "title": "刚开完家长会",
+            "viewkey": "9f64fec40d63d153faaf"
         },
     ],
     "success": 1
