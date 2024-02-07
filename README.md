@@ -58,7 +58,7 @@ data object结构,如下：
 | title      | 视频标题    | 是   | String |
 | pic        | 封面图片URL | 是   | String |
 | duration   | 视频时长    | 是   | String |
-| loadtime   | 上传日期    | 否   | Int |
+| loadtime   | 上传日期    | 是   | Int |
 | authorName | 作者名字    | 是   | String |
 | pop        | 热度       | 是   | Int |
 | fav        | 收藏        | 是   | Int |
