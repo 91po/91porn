@@ -176,7 +176,7 @@ def getVideoUrl(base_req):
 requests.adapters.DEFAULT_RETRIES = 5  # 增加重连次数
 s = requests.session()
 s.keep_alive = False  # 关闭多余连接
-requestURL = "https://w1030.9p47q.com/"
+requestURL = "https://w0202.9p47q.com/"
 
 
 def getURLAndDownload(viewurl, titles, author, index, page, isdownload720P):
