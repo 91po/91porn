@@ -11,10 +11,9 @@ from tqdm import tqdm
 from threading import Thread
 
 # 请先设置token和代理
-token = "SUZ6G"
+token = "obfYJ"
 proxies = {"http": 'http://127.0.0.1:1080', "https": 'http://127.0.0.1:1080'}
 requestURL = "https://w0202.9p47q.com/"
-
 
 headers = {
     'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -25,8 +24,6 @@ headers = {
     'Referer': 'http://91porn.com',
     "Cookie": ""
 }
-
-
 
 
 class MyThread(Thread):
@@ -111,6 +108,7 @@ def download_from_url(url, title):
 
 
 def strencode2(str):
+    print(token, str)
     return requests.post("https://www.91api.org/api/decode2",
                          data={
                              "token": token,
@@ -170,7 +168,10 @@ def getVideoUrl(base_req):
         elif url == "解密失败":
             print("解密失败")
             return 0
+        print(url)
         return url
+    except IndexError:
+        return -2
     except Exception as e:
         print(e)
         time.sleep(5)
@@ -229,12 +230,15 @@ def getURLAndDownload(viewurl, titles, author, index, page, isdownload720P):
     url = getVideoUrl(base_req)
     if url == 0:
         return 0, formatTitle
+    elif url == -2:
+        return -2, formatTitle
 
     # txttime = time.strftime("%Y-%m-%d", time.localtime())
     # videotype = urlparse(url).path.split(".")[1]
     dst = "../91视频MP4/" + formatTitle
     dst1 = "../下载汇总/" + formatTitle
     while True:
+
         videoSize = download_from_url(url, formatTitle)
         if videoSize == 0:
             break
@@ -309,6 +313,9 @@ def spider():
                     isdownload720P = True
                     retry += 1
                     continue
+                elif result[0] == -2:
+                    print("已达上限")
+                    return
                 else:
                     break
 
