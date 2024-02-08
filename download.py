@@ -10,6 +10,12 @@ import signal
 from tqdm import tqdm
 from threading import Thread
 
+# 请先设置token和代理
+token = "SUZ6G"
+proxies = {"http": 'http://127.0.0.1:1080', "https": 'http://127.0.0.1:1080'}
+requestURL = "https://w0202.9p47q.com/"
+
+
 headers = {
     'Accept-Language': 'zh-CN,zh;q=0.9',
     'Content-Type': 'multipart/form-data; session_language=cn_CN',
@@ -20,9 +26,7 @@ headers = {
     "Cookie": ""
 }
 
-# 请先设置token和代理
-token = "SUZ6G"
-proxies = {"http": 'http://127.0.0.1:1080', "https": 'http://127.0.0.1:1080'}
+
 
 
 class MyThread(Thread):
@@ -176,7 +180,6 @@ def getVideoUrl(base_req):
 requests.adapters.DEFAULT_RETRIES = 5  # 增加重连次数
 s = requests.session()
 s.keep_alive = False  # 关闭多余连接
-requestURL = "https://w0202.9p47q.com/"
 
 
 def getURLAndDownload(viewurl, titles, author, index, page, isdownload720P):
