@@ -11,7 +11,7 @@ from tqdm import tqdm
 from threading import Thread
 
 # 请先设置token和代理
-token = "x1VCY"
+token = "p8XVg"
 proxies = {"http": 'http://127.0.0.1:1080', "https": 'http://127.0.0.1:1080'}
 requestURL = "https://w0202.9p47q.com/"
 
