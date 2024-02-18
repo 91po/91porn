@@ -10,10 +10,10 @@ import signal
 from tqdm import tqdm
 from threading import Thread
 
-# 请先设置token和代理
-token = "QZm0X"
+# 请先设置token、首页地址和代理，将________替换为网址，后面不改
+token = "Klfuy"
+requestURL = "https://__________.com/"
 proxies = {"http": 'http://127.0.0.1:1080', "https": 'http://127.0.0.1:1080'}
-requestURL = "https://w0202.9p47q.com/"
 
 headers = {
     'Accept-Language': 'zh-CN,zh;q=0.9',
