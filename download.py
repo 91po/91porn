@@ -12,8 +12,8 @@ from threading import Thread
 
 # 请先设置token、首页地址和代理，将________替换为网址，后面不改
 token = "nSVpO"
-requestURL = "https://__________.com/"
 proxies = {"http": 'http://127.0.0.1:1080', "https": 'http://127.0.0.1:1080'}
+requestURL = "https://__________.com/"
 
 headers = {
     'Accept-Language': 'zh-CN,zh;q=0.9',
@@ -134,7 +134,9 @@ def filter_str(title):
 
 
 def getVideoUrl(base_req):
-    try:
+    try:        
+        if "你每天只可观看" in base_req.text:
+            return -2
         video = BeautifulSoup(base_req.text,
                               "html.parser").find_all("video", id="player_one")
         a = re.compile('document.write\(strencode2\("(.*)"').findall(
@@ -144,23 +146,13 @@ def getVideoUrl(base_req):
             a = a[0].split(',')
             text = a[0].replace('"', '')
             url = strencode2(text)
-            # if BeautifulSoup(strencode2(text), "html.parser").source == None:
-            #     url = BeautifulSoup(strencode2(text),
-            #                         "html.parser").a.attrs['href']
-            # else:
-            #     url = BeautifulSoup(strencode2(text),
-            #                         "html.parser").source.attrs['src']
+
         else:
             a = re.compile('document.write\(strencode\("(.*)"').findall(
                 str(video))
             text = a[0].split(',')
             url = strencode(text)
-            # url = BeautifulSoup(
-            #     strencode(text[0].replace('"', ''), text[1].replace('"', ''),
-            #               text[2].replace('"', '')),
-            #     "html.parser").source.attrs['src']
 
-        # a = re.compile('source src="(.*)" type=').findall(str(video))
 
         if url == "需要授权":
             print("请修改token")
@@ -171,6 +163,7 @@ def getVideoUrl(base_req):
         print(url)
         return url
     except IndexError:
+        print(base_req.text)
         return -2
     except Exception as e:
         print(e)
@@ -304,7 +297,10 @@ def spider():
                 result = getURLAndDownload(viewurl, titles, author, index,
                                            page, isdownload720P)
                 dst = "../91视频MP4/" + result[1]
-                if result[0] == 0 and retry <= 3:
+                if result[0] == -2:
+                    print("已达上限")
+                    return
+                elif result[0] == 0 and retry <= 3:
                     retry += 1
                     continue
                 elif result[0] != -1 and retry <= 3 and os.path.getsize(
@@ -313,9 +309,7 @@ def spider():
                     isdownload720P = True
                     retry += 1
                     continue
-                elif result[0] == -2:
-                    print("已达上限")
-                    return
+
                 else:
                     break
 
