@@ -49,6 +49,7 @@
 | data        | 视频列表，object格式见下   | 否   | Array[Object] |
 | total       | 总页数                   | 否   | int           |
 | msg         | 提示消息                 | 否   | String        |
+| domain      | 域名 请求成功时提供        |否   | String |
 
 data object结构,如下：
 
@@ -70,7 +71,7 @@ data object结构,如下：
 ### 请求示例
 
 ```
-https://91api.org/api/list?category=rf&page=1
+https://91api.org/api/list?token=token&category=rf&page=1
 ```
 
 ### 响应示例
@@ -100,7 +101,82 @@ https://91api.org/api/list?category=rf&page=1
 }
 ```
 
+## 接口：模糊搜索
+| 描述     | 内容               |
+| -------- | ------------------ |
+| 接口功能 | 根据关键字搜索       |
+| 请求协议 | HTTPS              |
+| 请求方法 | GET                |
+| 请求url  | search             |
+| 响应格式 | json               |
 
+### 请求参数
+
+| 参数     | 描述                                             | 必填 | 类型   |
+| -------- | ------------------------------------------------ | ---- | ------ |
+| token    | 授权码                                            | 是   | String |
+| q        | 关键字                                            | 是   | String |
+| page     | 页码 默认: 1                                       | 否   | int    |
+
+### 响应参数
+
+| 参数        | 描述                     | 必有 | 类型          |
+| ----------- | ------------------------ | ---- | ------------- |
+| success     | 是否成功 0:失败 1: 成功    | 是   |       int     |
+| data        | 视频列表，object格式见下   | 否   | Array[Object] |
+| total       | 总页数                   | 否   | int           |
+| msg         | 提示消息                 | 否   | String        |
+| domain      | 域名 请求成功时提供        |否   | String |
+
+data object结构,如下：
+
+| 参数       | 描述        | 必有 | 类型   |
+| ---------- | ----------- | ---- | ------ |
+| viewkey    | 视频viewkey | 是   | String |
+| title      | 视频标题    | 是   | String |
+| pic        | 封面图片URL | 是   | String |
+| duration   | 视频时长    | 是   | String |
+| loadtime   | 上传日期    | 是   | Int |
+| authorName | 作者名字    | 是   | String |
+| pop        | 热度       | 是   | Int |
+| fav        | 收藏        | 是   | Int |
+| comments   | 留言        | 是   | Int |
+| like       | 点赞       | 是   | Int |
+| dislike    | 不喜欢     | 是   | Int |
+| thumb      | 缩略视频URL | 是   | String |
+
+### 请求示例
+
+```
+https://91api.org/api/search?token=token&q=美女&page=1
+```
+
+### 响应示例
+
+
+```
+{
+    "data": [
+        {
+            "authorName": "匿名",
+            "duration": "00:39:36",
+            "loadtime": 1706909369,
+            "pic": "https://172913mb/931273.jpg",
+            "title": "看视频水印",
+            "viewkey": "ce7cdddefa4799fd0451"
+        },
+        {
+            "authorName": "匿名",
+            "duration": "00:59:18",
+            "loadtime": 1706909654,
+            "pic": "https://17291rg/thumb/931270.jpg",
+            "title": "刚开完家长会",
+            "viewkey": "9f64fec40d63d153faaf"
+        },
+    ],
+    "success": 1
+}
+```
 
 
 ## 接口：视频链接解密
