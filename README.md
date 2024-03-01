@@ -19,6 +19,7 @@
 * 完成友好的GUI界面
 
 今日口令（每日21:00更新 ）**EGrSF**, 时效:1天, 总次数:1000
+免费申请token机器人 https://t.me/api_91porn_bot
 
 # API版接口 
 
