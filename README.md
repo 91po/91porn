@@ -6,6 +6,9 @@
 # 介绍
 * 这个是一个使用python构建的获取某网站视频资源的简易爬虫，无须安装Chrome等浏览器，直接js解密（strencode1 strencode2函数）
 
+# 介绍视频
+https://www.youtube.com/watch?v=n1Y6R5XnUNU
+
 # 基本要求
 * 需要能访问得到某不存在的网站(某些校园网因为IPV6或教育网的原因可能可以直接访问)
 * 若使用源码运行，需要预先安装python3及第三方包bs4及requests
@@ -18,7 +21,7 @@
 * 伪造cookie模拟登录，解除一个IP一天只能下10个视频的限制
 * 完成友好的GUI界面
 
-今日口令（每日21:00更新 ）**tVYCj**, 时效:1天, 总次数:1000
+今日口令（每日21:00更新 ）**da526**, 时效:1天, 总次数:1000
 
 免费申请token机器人 https://t.me/api_91porn_bot
 
