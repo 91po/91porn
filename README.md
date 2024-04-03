@@ -21,7 +21,7 @@ https://www.youtube.com/watch?v=n1Y6R5XnUNU
 * 伪造cookie模拟登录，解除一个IP一天只能下10个视频的限制
 * 完成友好的GUI界面
 
-今日口令（每日21:00更新 ）**ExJOG**, 时效:1天, 总次数:1000
+今日口令（每日21:00更新 ）**t2TyS**, 时效:1天, 总次数:1000
 
 免费申请token机器人 https://t.me/api_91porn_bot
 
