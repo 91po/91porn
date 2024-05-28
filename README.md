@@ -213,7 +213,7 @@ https://91api.org/api/search?token=token&q=美女&page=1
 ### 请求示例
 
 ```
-wget https://www.91api.org/api/decode2 --post-data "token=口令&str=加密字符串"
+wget https://91api.org/api/decode2 --post-data "token=口令&str=加密字符串"
 ```
 
 
